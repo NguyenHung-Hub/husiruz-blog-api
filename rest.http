@@ -1,0 +1,118 @@
+@base = http://localhost:3001
+
+###
+POST {{base}}/user
+Content-Type: application/json
+
+{
+    "username":"mlsdf",
+    "email":"mlsdf@gmail.com",
+    "password":"123456",
+    "avatar":"https://t3h.edu.vn/sites/default/files/php-la-gi_1.png",
+    "description":"hung rat buon"
+}
+###
+POST {{base}}/user
+Content-Type: application/json
+
+{
+    "username":"nguyenhung987",
+    "email":"nguyenhung987@gmail.com",
+    "password":"123456",
+    "avatar":"https://t3h.edu.vn/sites/default/files/php-la-gi_1.png",
+    "description":"nguyen hung 987"
+}
+
+###
+
+GET {{base}}/user/65298e016a32649bf95d5bad
+
+###
+
+POST {{base}}/login
+Content-Type: application/json
+
+{
+    "email":"ktll12@gmail.com",
+    "password":"123456"
+}
+###
+
+POST {{base}}/tokens/refresh
+Content-Type: application/json
+
+{
+    "session_id":"1c5e6566-e048-4e09-9027-da8c6de1d12d"
+}
+###
+POST {{base}}/tokens/check
+Content-Type: application/json
+
+{
+    "refresh_token":"v2.local.4oLCd7VHrKG-5BdAh-m6-21ov4MDULznVEcL6qrtwOJ4F62m7qotpK-TQNKsjXdU6yx7hOsQNmRCcuTnCaapzKEKloTMSgZKIVY3LjuDsiro98CLjSYjng7ojNpmO60THQ7Cdt_src4RExsFe2vNGtoYV3it6ZXKAI6bFh1XuWM2xk46CHEKYh2IXu590x_AtVYmZoCnz8u2gA3VncXCHqL6eS0DmUiunJmH-0_eJassuIUSyv4t4ZI5w0PZBzQCHqhs3gIE25J_ZqErmNcOytw.bnVsbA"
+}
+###
+
+POST {{base}}/login
+Content-Type: application/json
+
+{
+    "email":"nguyenhung987@gmail.com",
+    "password":"123456"
+}
+###
+
+POST {{base}}/category
+Authorization: Bearer v2.local.zpTXL4xJ8_90X42RZkoBw9jv9lA8zXX_IEOB3zIV3fyrY7JES26-b298ax_y9dDDI5rgvQXiXhYFozl3TWdNrvWvbvEJJ_8Oa-w1z7fhWU5U1rqbfzn4KxUTgmpezkW-8G4K-xojwiyFrgKcI6dLXDnWjSmkNJvlYTatfePvF_4sPu7vA0Nq-EA1PyaTCmUhC1FU5dGqLmMc5Sv6qZIxikg8i_XXmB44nmQtM6Y-kfs9P_IgAMLLcgI7uNaF_joMfzLNMhtRnQFMOYyGFI9MOLI.bnVsbA
+
+{
+    "name":"Tutorial NodeJS"
+}
+###
+
+GET  {{base}}/category/652ac6e5c1ca6eaf378da515
+
+
+###
+GET {{base}}/post/tao-api-voi-golang-phan-6
+
+###
+POST {{base}}/post
+Authorization: Bearer v2.local.V5sMPc_ssUGDK1xgVLlKVJPXSAM77PdZVQsI3CvGMeF_njdeX-8xx2jj8ujTIzl--Dm49D_W2rHWRobblW_GKEbnr76pfhrSVlkditL1ZkMkPIlsGWSwvme0MFp0vlXRw8avbL9KGjKVpFKmjghmEe1_TVX43mW5rmPmkkLzSqmPnaigGoEPmhLNC-1_zZyzpXvf-E7tr4tvoBRK8tZRP5C-ZGf0U3KTWcRpbtEg45biMftMI4M98RRWsWAq5fWZ8OVl7AmzvCVNhg.bnVsbA
+Content-Type: application/json
+
+{
+    "title":"Tạo api với Golang phần 6",
+    "description":"Tạo api với Golang mô tả phần 5",
+    "photo":"https://publy-cdn.s3.ap-northeast-2.amazonaws.com/user-uploaded/5643/2022.10/44918d95d83ad3ebfd3fd31f127ae28b9b579a514f0f21664ce3f6a8bf691937.png",
+    "author":"652a8a09b829d3ff2ea07666",
+    "categories":["652acae4b827f1c3de61d9bb"],
+    "status":"visibility"
+}
+
+
+###
+
+GET  {{base}}/post/tao-api-voi-golang-phan-5
+Authorization: Bearer v2.local.HqOz5Jx__5CUio1tCOEsGSKTtBOPYF5lxDdYaIofqN8sd6tCkHfKusmEhiByjwtGfpJTBpsISzBo-j8wWKc1mSDmI6yMWJJrAYejwrcBN3Bte5R7Ig9YVcEZbwA6iCArkaVyBWKA9iMab8KA3x9c-r0F-Nzvr3uc-qZOrX-25EzaXM_V-0W_2LDamT19FBG0UA8RrD2b3aVBSbH7eYofy985udc5e8gUZGapLCWMezwSdF3VtCh1XELRR74XVzyIkFabPDF7dfq74Q.bnVsbA
+
+### List Post
+GET  {{base}}/post?page=1&limit=10&status=visibility
+### List Post
+GET  {{base}}/post?page=1&limit=10
+
+
+
+### List Post with category id
+GET  {{base}}/post?page=1&limit=10&category_id=652acae4b827f1c3de61d9bb
+
+
+### List Post
+GET  {{base}}/post/random?n=4
+
+### List categories
+GET  {{base}}/categories
+
+### get post by category
+GET  {{base}}/post/cate?category_id=652acae4b827f1c3de61d9bb
+
